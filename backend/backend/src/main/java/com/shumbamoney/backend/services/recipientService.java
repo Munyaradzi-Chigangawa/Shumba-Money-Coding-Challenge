@@ -1,2 +1,4 @@
-package com.shumbamoney.backend.services;public class recipientService {
+package com.shumbamoney.backend.services;
+
+public class recipientService {
 }
