@@ -20,14 +20,14 @@ public class RecipientService {
     private final RecipientRepo recipientRepo;
 
     // Save Recipient
-    public Recipient save (RecipientDto _recipient) {
+    public Recipient save (RecipientDto recipient) {
         Recipient recipient1 = Recipient.builder()
-                .recipientName(_recipient.getRecipientName())
-                .recipientEmail(_recipient.getRecipientEmail())
-                .recipientAddress(_recipient.getRecipientAddress())
-                .recipientCell(_recipient.getRecipientCell())
-                .recipientCountry(_recipient.getRecipientCountry())
-                .recipientTown(_recipient.getRecipientTown())
+                .recipientName(recipient.getRecipientName())
+                .recipientEmail(recipient.getRecipientEmail())
+                .recipientAddress(recipient.getRecipientAddress())
+                .recipientCell(recipient.getRecipientCell())
+                .recipientCountry(recipient.getRecipientCountry())
+                .recipientTown(recipient.getRecipientTown())
                 .build();
         return recipientRepo.save(recipient1);
     }
@@ -51,9 +51,9 @@ public class RecipientService {
 
     // Update Recipient
 
-//    public void updateRecipient (recipientDto _recipient) {
-//        recipient recipient1 = _recipientRepo.findById;
+//    public void updateRecipient (RecipientDto recipient) {
+//        recipient recipient1 = recipientRepo.findById;
 //
-//        return _recipientRepo.save(recipient);
+//        return RecipientRepo.save(recipient);
 //    }
 }

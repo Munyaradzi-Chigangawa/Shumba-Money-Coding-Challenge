@@ -25,9 +25,9 @@ public class SenderController {
     }
 
     @PostMapping( value = "/login")
-    public Sender login (@RequestBody Sender _sender) {
+    public Sender login (@RequestBody Sender sender) {
         log.info("Sender Logged in.");
-        return senderService.login(_sender);
+        return senderService.login(sender);
     }
 
 }

@@ -20,17 +20,17 @@ public class SenderService {
     private static final SecureRandom secureRandom = new SecureRandom();
     private static final Base64.Encoder base64encoder = Base64.getUrlEncoder();
 
-    public Sender save (SenderDto _sender) {
-        _sender.setToken(generateToken());
+    public Sender save (SenderDto sender) {
+        sender.setToken(generateToken());
         Sender sender1 = Sender.builder()
-                .senderName(_sender.getSenderName())
-                .senderAddress(_sender.getSenderAddress())
-                .senderCell(_sender.getSenderCell())
-                .senderCountry(_sender.getSenderCountry())
-                .senderEmail(_sender.getSenderEmail())
-                .senderTown(_sender.getSenderTown())
-                .password(_sender.getPassword())
-                .token(_sender.getToken())
+                .senderName(sender.getSenderName())
+                .senderAddress(sender.getSenderAddress())
+                .senderCell(sender.getSenderCell())
+                .senderCountry(sender.getSenderCountry())
+                .senderEmail(sender.getSenderEmail())
+                .senderTown(sender.getSenderTown())
+                .password(sender.getPassword())
+                .token(sender.getToken())
                 .build();
 
         return senderRepo.save(sender1);
@@ -43,12 +43,12 @@ public class SenderService {
 
     }
 
-    public Sender login(Sender _sender) {
-        Sender existingSender = senderRepo.findById(_sender.getSenderEmail()).orElse(null);
+    public Sender login(Sender sender) {
+        Sender existingSender = senderRepo.findById(sender.getSenderEmail()).orElse(null);
         assert existingSender != null;
         if (
-            existingSender.getSenderEmail().equals(_sender.getSenderEmail()) &&
-                    existingSender.getPassword().equals(_sender.getPassword())
+            existingSender.getSenderEmail().equals(sender.getSenderEmail()) &&
+                    existingSender.getPassword().equals(sender.getPassword())
         ) {
             existingSender.setPassword("");
             return existingSender;
