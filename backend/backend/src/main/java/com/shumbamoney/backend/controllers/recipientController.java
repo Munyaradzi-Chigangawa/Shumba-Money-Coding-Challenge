@@ -21,30 +21,35 @@ public class recipientController {
 
     private final recipientService _recipientService;
 
+    // Create Endpoint
     @PostMapping( value = "/addRecipient")
     public ResponseEntity<recipient> addRecipient (@RequestBody recipientDto recipient) {
         log.info("Recipient Added.");
         return new ResponseEntity<>(_recipientService.save(recipient), HttpStatus.CREATED);
     }
 
+    // Read All Endpoint
     @GetMapping( value = "/getRecipients")
     public ResponseEntity<List<recipient>> getRecipients() {
         log.info("Recipients Retrieved.");
         return new ResponseEntity<>(_recipientService.getRecipients(), HttpStatus.OK);
     }
 
-    @DeleteMapping( value = "/deleteRecipient/{id}")
-    public ResponseEntity<recipient> deleteRecipient (@PathVariable Long id) {
-        log.info("Recipient Deleted.");
-        return new ResponseEntity<>(_recipientService.deleteRecipient(id), HttpStatus.OK);
-    }
-
+    // Read Specific Record Endpoint
     @GetMapping( value = "/getRecipient/{id}")
     public ResponseEntity<recipient> getRecipient(@PathVariable Long id) {
         log.info("Recipient Retrieved");
         return new ResponseEntity<>(_recipientService.getRecipient(id), HttpStatus.OK);
     }
 
+    // Delete Endpoint
+    @DeleteMapping( value = "/deleteRecipient/{id}")
+    public ResponseEntity<recipient> deleteRecipient (@PathVariable Long id) {
+        log.info("Recipient Deleted.");
+        return new ResponseEntity<>(_recipientService.deleteRecipient(id), HttpStatus.OK);
+    }
+
+    // Update Endpoint
 //    @PutMapping( value = "/updateRecepient/{id}")
 
 

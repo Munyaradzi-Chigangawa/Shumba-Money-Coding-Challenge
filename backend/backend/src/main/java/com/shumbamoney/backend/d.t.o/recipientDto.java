@@ -7,7 +7,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 public class recipientDto implements Serializable {
-//    @NotEmpty(message = "")
     private String recipientName;
     private String recipientEmail;
     private String recipientAddress;

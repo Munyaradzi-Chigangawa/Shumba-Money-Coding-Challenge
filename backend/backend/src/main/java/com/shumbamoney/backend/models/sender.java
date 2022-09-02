@@ -13,6 +13,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "senders")
 @Builder
+
+// Sender Model
 public class sender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

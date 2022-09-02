@@ -19,6 +19,7 @@ public class recipientService {
 
     private final recipientRepo _recipientRepo;
 
+    // Save Recipient
     public recipient save (recipientDto _recipient) {
         recipient recipient1 = recipient.builder()
                 .recipientName(_recipient.getRecipientName())
@@ -31,16 +32,18 @@ public class recipientService {
         return _recipientRepo.save(recipient1);
     }
 
-
+    // Get All Recipients
     public List<recipient> getRecipients() {
+
         return _recipientRepo.findAll();
     }
-
+    // Get Specific Recipient
     public recipient getRecipient(Long id) {
         return _recipientRepo.findById(id)
                 .orElseThrow(() -> new recipientNotFound("No Recipients Found"));
     }
 
+    // Delete Recipient
     public recipient deleteRecipient (Long id) {
         _recipientRepo.deleteAllById(Collections.singleton(id));
         return  null;
