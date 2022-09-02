@@ -14,5 +14,6 @@ public class senderDto implements Serializable {
     private String password;
     private String senderCell;
     private String senderCountry;
-    private  String senderTown;
+    private String senderTown;
+    private String token;
 }

@@ -1,5 +1,4 @@
 package com.shumbamoney.backend.models;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,5 +26,6 @@ public class sender {
     private String password;
     private String senderCell;
     private String senderCountry;
-    private  String senderTown;
+    private String senderTown;
+    private String token;
 }
