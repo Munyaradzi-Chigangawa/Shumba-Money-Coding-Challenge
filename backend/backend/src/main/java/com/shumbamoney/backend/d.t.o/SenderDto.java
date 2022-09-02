@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 
-public class senderDto implements Serializable {
+public class SenderDto implements Serializable {
     private String senderName;
     private String senderEmail;
     private String senderAddress;

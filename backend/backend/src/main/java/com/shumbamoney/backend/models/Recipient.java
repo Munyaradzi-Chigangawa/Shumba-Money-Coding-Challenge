@@ -14,7 +14,7 @@ import javax.persistence.*;
 
 
 // Recipient Model
-public class recipient {
+public class Recipient {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(length = 100)

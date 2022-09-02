@@ -1,7 +1,7 @@
 package com.shumbamoney.backend.controllers;
-import com.shumbamoney.backend.d.t.o.senderDto;
-import com.shumbamoney.backend.models.sender;
-import com.shumbamoney.backend.services.senderService;
+import com.shumbamoney.backend.d.t.o.SenderDto;
+import com.shumbamoney.backend.models.Sender;
+import com.shumbamoney.backend.services.SenderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Slf4j
 
-public class senderController {
+public class SenderController {
 
-    private final senderService _senderService;
+    private final SenderService senderService;
 
     @PostMapping( value = "/addSender")
-    public ResponseEntity <sender> addSender (@RequestBody senderDto sender) {
+    public ResponseEntity <Sender> addSender (@RequestBody SenderDto sender) {
         log.info("Sender Added.");
-        return new ResponseEntity<>(_senderService.save(sender), HttpStatus.CREATED);
+        return new ResponseEntity<>(senderService.save(sender), HttpStatus.CREATED);
     }
 
     @PostMapping( value = "/login")
-    public sender login (@RequestBody sender _sender) {
+    public Sender login (@RequestBody Sender _sender) {
         log.info("Sender Logged in.");
-        return _senderService.login(_sender);
+        return senderService.login(_sender);
     }
 
 }

@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Builder
 
 // Sender Model
-public class sender {
+public class Sender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(length = 100)

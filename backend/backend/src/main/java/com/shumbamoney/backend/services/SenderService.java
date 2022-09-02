@@ -1,7 +1,7 @@
 package com.shumbamoney.backend.services;
-import com.shumbamoney.backend.d.t.o.senderDto;
-import com.shumbamoney.backend.models.sender;
-import com.shumbamoney.backend.repo.senderRepo;
+import com.shumbamoney.backend.d.t.o.SenderDto;
+import com.shumbamoney.backend.models.Sender;
+import com.shumbamoney.backend.repo.SenderRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,16 +13,16 @@ import java.util.Base64;
 @Service
 @RequiredArgsConstructor
 
-public class senderService {
+public class SenderService {
 
     @Autowired
-    private final senderRepo _senderRepo;
+    private final SenderRepo senderRepo;
     private static final SecureRandom secureRandom = new SecureRandom();
     private static final Base64.Encoder base64encoder = Base64.getUrlEncoder();
 
-    public sender save (senderDto _sender) {
+    public Sender save (SenderDto _sender) {
         _sender.setToken(generateToken());
-        sender sender1 = sender.builder()
+        Sender sender1 = Sender.builder()
                 .senderName(_sender.getSenderName())
                 .senderAddress(_sender.getSenderAddress())
                 .senderCell(_sender.getSenderCell())
@@ -33,7 +33,7 @@ public class senderService {
                 .token(_sender.getToken())
                 .build();
 
-        return _senderRepo.save(sender1);
+        return senderRepo.save(sender1);
     }
 
     private String generateToken() {
@@ -42,14 +42,10 @@ public class senderService {
         return base64encoder.encodeToString(token);
 
     }
-    private boolean checkSenderExist(sender _sender) {
-        sender existingSender = _senderRepo.findById(_sender.getSenderEmail()).orElse(null);
 
-        return existingSender != null;
-    }
-
-    public sender login(sender _sender) {
-        sender existingSender = _senderRepo.findById(_sender.getSenderEmail()).orElse(null);
+    public Sender login(Sender _sender) {
+        Sender existingSender = senderRepo.findById(_sender.getSenderEmail()).orElse(null);
+        assert existingSender != null;
         if (
             existingSender.getSenderEmail().equals(_sender.getSenderEmail()) &&
                     existingSender.getPassword().equals(_sender.getPassword())
