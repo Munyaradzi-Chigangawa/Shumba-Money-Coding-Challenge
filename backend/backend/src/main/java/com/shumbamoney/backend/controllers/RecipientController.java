@@ -48,10 +48,10 @@ public class RecipientController {
     }
 
     // Update Endpoint
-//    @PutMapping( value = "/updateRecipient/{id}")
-//    public ResponseEntity<Recipient> updateRecipient (@PathVariable Long id) {
-//    log.info("Recipient Updated.");
-//    return new ResponseEntity<>(recipientService.updateRecipent(id), HttpStatus.OK);
-//    }
+    @PutMapping( value = "/updateRecipient/{id}")
+    public ResponseEntity<Recipient> updateRecipient (@PathVariable Long id, @RequestBody RecipientDto recipient) {
+        log.info("Recipient Updated.");
+        return new ResponseEntity<>(recipientService.updateRecipient(recipient, id), HttpStatus.OK);
+    }
 
 }
