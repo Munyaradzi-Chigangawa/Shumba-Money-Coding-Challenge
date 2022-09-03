@@ -50,6 +50,17 @@ public class RecipientService {
     }
 
     // Update Recipient
+    public Recipient updateRecipient (RecipientDto recipientDto, Long id) {
+        Recipient recipient = recipientRepo.findById(id)
+                .orElseThrow(() -> new RecipientNotFound("No Recipients Found"));
+        recipient.setRecipientName(recipientDto.getRecipientName());
+        recipient.setRecipientEmail(recipientDto.getRecipientEmail());
+        recipient.setRecipientAddress(recipientDto.getRecipientAddress());
+        recipient.setRecipientCell(recipientDto.getRecipientCell());
+        recipient.setRecipientCountry(recipientDto.getRecipientCountry());
+        recipient.setRecipientTown(recipientDto.getRecipientTown());
+        return recipientRepo.save(recipient);
+    }
 
 //    public void updateRecipient (RecipientDto recipient) {
 //        recipient recipient1 = recipientRepo.findById;
