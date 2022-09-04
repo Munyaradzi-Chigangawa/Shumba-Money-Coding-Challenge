@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Sender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(length = 100)
+    @Column(length = 100,name = "sender_id")
     private Long senderId;
     @Column(name = "sender_name", columnDefinition = "varchar(255)")
     private String senderName;

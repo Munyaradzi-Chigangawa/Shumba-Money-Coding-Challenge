@@ -1,5 +1,6 @@
 package com.shumbamoney.backend.services;
 import com.shumbamoney.backend.d.t.o.SenderDto;
+import com.shumbamoney.backend.exceptions.DataNotFoundException;
 import com.shumbamoney.backend.models.Sender;
 import com.shumbamoney.backend.repo.SenderRepo;
 import lombok.RequiredArgsConstructor;
@@ -44,7 +45,7 @@ public class SenderService {
     }
 
     public Sender login(Sender sender) {
-        Sender existingSender = senderRepo.findById(sender.getSenderEmail()).orElse(null);
+        Sender existingSender = senderRepo.findSenderBySenderEmail(sender.getSenderEmail()).orElse(null);
         assert existingSender != null;
         if (
             existingSender.getSenderEmail().equals(sender.getSenderEmail()) &&
@@ -56,4 +57,7 @@ public class SenderService {
         return null;
     }
 
+    public Sender findById(Long senderId) {
+        return senderRepo.findById(senderId).orElseThrow(()-> new DataNotFoundException("Sender with ID "+senderId+" was not found"));
+    }
 }

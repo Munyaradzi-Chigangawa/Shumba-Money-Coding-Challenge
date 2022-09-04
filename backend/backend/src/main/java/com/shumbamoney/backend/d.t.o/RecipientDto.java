@@ -9,6 +9,9 @@ import java.io.Serializable;
 public class RecipientDto implements Serializable {
     @NotEmpty(message = "Name Required.")
     private String recipientName;
+    private String recipientMaidenName;
+    @NotEmpty(message = "Surname Required")
+    private String recipientSurname;
     @NotEmpty(message = "Email Required.")
     private String recipientEmail;
     @NotEmpty(message = "Address Required.")

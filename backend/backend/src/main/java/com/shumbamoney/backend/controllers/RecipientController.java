@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api/v1")
 @CrossOrigin(value = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @Slf4j
@@ -21,17 +21,18 @@ public class RecipientController {
 
     // Create Endpoint
     @PostMapping( value = "/addRecipient")
-    public ResponseEntity<Recipient> addRecipient (@RequestBody RecipientDto recipient) {
+    public ResponseEntity<Recipient> addRecipient (@RequestBody RecipientDto recipient,@RequestParam Long senderId) {
         log.info("Recipient Added.");
-        return new ResponseEntity<>(recipientService.save(recipient), HttpStatus.CREATED);
+        return new ResponseEntity<>(recipientService.save(recipient,senderId), HttpStatus.CREATED);
     }
 
     // Read All Endpoint
     @GetMapping( value = "/getRecipients")
-    public ResponseEntity<List<Recipient>> getRecipients() {
+    public ResponseEntity<List<Recipient>> getRecipients(@RequestParam long senderId) {
         log.info("Recipients Retrieved.");
-        return new ResponseEntity<>(recipientService.getRecipients(), HttpStatus.OK);
+        return new ResponseEntity<>(recipientService.getRecipients(senderId), HttpStatus.OK);
     }
+
 
     // Read Specific Record Endpoint
     @GetMapping( value = "/getRecipient/{id}")
