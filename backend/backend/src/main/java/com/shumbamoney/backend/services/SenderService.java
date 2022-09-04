@@ -44,7 +44,7 @@ public class SenderService {
 
     }
 
-    public Sender login(Sender sender) {
+    public Sender login(SenderDto sender) {
         Sender existingSender = senderRepo.findSenderBySenderEmail(sender.getSenderEmail()).orElse(null);
         assert existingSender != null;
         if (

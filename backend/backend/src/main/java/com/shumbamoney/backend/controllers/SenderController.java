@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api/v1")
 @CrossOrigin(value = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @Slf4j
@@ -24,10 +24,19 @@ public class SenderController {
         return new ResponseEntity<>(senderService.save(sender), HttpStatus.CREATED);
     }
 
+    // Login Endpoint
     @PostMapping( value = "/login")
-    public Sender login (@RequestBody Sender sender) {
-        log.info("Sender Logged in.");
-        return senderService.login(sender);
+    public ResponseEntity <Sender> login (@RequestBody SenderDto sender) {
+        log.info("Sender Logged In.");
+        return new ResponseEntity<>(senderService.login(sender), HttpStatus.OK);
     }
+
+
+
+    // @PostMapping( value = "/login")
+    // public Sender login (@RequestBody Sender sender) {
+    //     log.info("Sender Logged in.");
+    //     return senderService.login(sender);
+    // }
 
 }
