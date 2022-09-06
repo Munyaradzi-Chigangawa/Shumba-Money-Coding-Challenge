@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.security.SecureRandom;
 import java.util.Base64;
+import java.util.List;
 
 @Transactional
 @Service
@@ -60,4 +61,10 @@ public class SenderService {
     public Sender findById(Long senderId) {
         return senderRepo.findById(senderId).orElseThrow(()-> new DataNotFoundException("Sender with ID "+senderId+" was not found"));
     }
+
+    // Get All Senders
+    public List<Sender> getSenders() {
+        return senderRepo.findAll();
+    }
+
 }

@@ -42,6 +42,7 @@ export class RecipientComponent implements OnInit {
     this.recipientService.deleteRecipient(recipientId).subscribe(
       (response: void) => {
         console.log(response);
+        alert("Recipient deleted successfully");
         this.getRecipients();
       },
       (error: any) => console.log(error)
