@@ -1,0 +1,47 @@
+<!-- <div class="logo">
+    <a href="http://localhost:4200" class="simple-text logo-normal">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo.png" height="30" alt="">
+        </a>
+    </a>
+    
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li
+        routerLinkActive="active"
+        *ngFor="let menuItem of menuItems"
+        class="{{ menuItem.class }} nav-item"
+      >
+        <a [routerLink]="[menuItem.path]">
+          <i class="tim-icons  {{ menuItem.icon }}"></i>
+          <p>{{ menuItem.title }}</p>
+        </a>
+      </li>
+    </ul>
+  </div> -->
+
+  <div class="sidebar">
+    <ul>
+      <li><a href="#">
+          <span class="icon"><i class="fas fa-book"></i></span>
+          <span class="title">Books</span>
+        </a></li>
+      <li><a href="#">
+          <span class="icon"><i class="fas fa-file-video"></i></span>
+          <span class="title">Movies</span>
+        </a></li>
+      <li><a href="#">
+          <span class="icon"><i class="fas fa-volleyball-ball"></i></span>
+          <span class="title">Sports</span>
+        </a></li>
+      <li><a href="#" class="active">
+          <span class="icon"><i class="fas fa-blog"></i></span>
+          <span class="title">Blogs</span>
+        </a></li>
+      <li><a href="#">
+          <span class="icon"><i class="fas fa-leaf"></i></span>
+          <span class="title">Nature</span>
+        </a></li>
+    </ul>
+  </div>

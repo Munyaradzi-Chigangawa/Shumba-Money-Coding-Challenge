@@ -1,0 +1,71 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.png" width="200" height="30" alt="">
+        </a>
+        <a class="nav-item nav-link" routerLink="/recipient">Recipients</a>
+        <a class="nav-item nav-link" routerLink="/login">Logout</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+    <div class=" content">
+        <div class="row">
+            <div class=" col-md-8 mt-3">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h5 class=" title">Update Recipient</h5>
+                    </div>
+                    <div class=" card-body">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="recipientName">First Name</label>
+                                <input type="text" class="form-control" id="recipientName" placeholder="First Name"
+                                    [(ngModel)]="recipient.recipientName" name="recipientName">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientMaidenName">Maiden Name</label>
+                                <input type="text" class="form-control" id="recipientMaidenName"
+                                    placeholder="Maiden Name" [(ngModel)]="recipient.recipientMaidenName"
+                                    name="recipientMaidenName">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientSurname">Surname</label>
+                                <input type="text" class="form-control" id="recipientSurname" placeholder="Surname"
+                                    [(ngModel)]="recipient.recipientSurname" name="recipientSurname">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientEmail">Email</label>
+                                <input type="text" class="form-control" id="recipientEmail" placeholder="Enter Email"
+                                    [(ngModel)]="recipient.recipientEmail" name="recipientEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientAddress">Address</label>
+                                <input type="text" class="form-control" id="recipientAddress" placeholder="Address"
+                                    [(ngModel)]="recipient.recipientAddress" name="recipientAddress">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientCell">Cell</label>
+                                <input type="text" class="form-control" id="recipientCell" placeholder="Cell"
+                                    [(ngModel)]="recipient.recipientCell" name="recipientCell">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientTown">Town</label>
+                                <input type="text" class="form-control" id="recipientTown" placeholder="Town"
+                                    [(ngModel)]="recipient.recipientTown" name="recipientTown">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientCountry">Country</label>
+                                <input type="text" class="form-control" id="recipientCountry" placeholder="Country"
+                                    [(ngModel)]="recipient.recipientCountry" name="recipientCountry">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Recipient</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

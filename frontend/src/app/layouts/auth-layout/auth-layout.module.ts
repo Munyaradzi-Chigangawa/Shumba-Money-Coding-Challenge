@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from 'src/app/pages/auth/login/login.component';
-import { RouterModule } from '@angular/router';
-import { AuthLayoutRoutes } from './auth-layout.routing';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthLayoutRoutes } from './auth-layout.routing';
+
+
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(AuthLayoutRoutes),
     FormsModule,
     NgbModule
-
   ]
 })
 export class AuthLayoutModule { }

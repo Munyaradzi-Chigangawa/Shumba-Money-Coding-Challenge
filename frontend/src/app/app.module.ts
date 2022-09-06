@@ -9,6 +9,10 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { RecipientComponent } from './pages/dashboard/recipient/recipient.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from './components/components.module';
+import { AddRecipientComponent } from './pages/dashboard/add-recipient/add-recipient.component';
+import { UpdateRecipientComponent } from './pages/dashboard/update-recipient/update-recipient.component';
+import { ViewRecipientComponent } from './pages/dashboard/view-recipient/view-recipient.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     AuthLayoutComponent,
     DashboardLayoutComponent,
     RecipientComponent,
+    AddRecipientComponent,
+    UpdateRecipientComponent,
+    ViewRecipientComponent,
     
   ],
   imports: [
@@ -24,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    ComponentsModule
     
   ],
   providers: [AuthGuardService],

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Recipient } from 'src/app/models/recipient';
 import { RecipientService } from 'src/app/services/recipient.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-recipient',
@@ -20,52 +21,19 @@ export class RecipientComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecipients();
+
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(value => {
+      console.log(value);
+   });
   }
-  private getRecipients() {
-    this.recipientService
-      .getRecipientsList()
+  public getRecipients() {
+    this.recipientService.getRecipientsList()
       .subscribe(
         (
           data: Recipient[]) => {
           this.recipients = data;
           console.log(data);
         });
-  }
-
-  // Consuming Create Endpoint
-  public addRecipient(f: NgForm): void {
-    this.recipientService.addRecipient(f.value).subscribe(
-      (response: Recipient) => {
-        console.log(response);
-        this.getRecipients();
-      },
-      (error: any) => console.log(error)
-    );
-  }
-
-
-  // public addRecipient(f: NgForm) {
-  //   document.getElementById('add-recipient-form')?.click();
-  //   this.recipientService.addRecipient(f.value).subscribe(
-  //     (response: Recipient) => {
-  //       console.log(response);
-  //       this.getRecipients();
-  //       f.reset();
-  //     },
-  //     (error: any) => console.log(error)
-  //   );
-  // }
-
-  public updateRecipient(f: NgForm) {
-    document.getElementById('update-recipient-form')?.click();
-    this.recipientService.updateRecepient(f.value).subscribe(
-      (response: Recipient) => {
-        console.log(response);
-        this.getRecipients();
-        f.reset();
-      },
-      (error: any) => console.log(error)
-    );
   }
 
   public deleteRecipient(recipientId: number) {
@@ -77,15 +45,6 @@ export class RecipientComponent implements OnInit {
       (error: any) => console.log(error)
     );
   }
-
-  // onSumbit(f: NgForm) {
-  //   this.addRecipient(f);
-  //     this.ngOnInit();
-
-  //   // Reload the table
-
-  //   this.modalService.dismissAll(); // Dismiss the Modal
-  // }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -105,4 +64,5 @@ export class RecipientComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
 }

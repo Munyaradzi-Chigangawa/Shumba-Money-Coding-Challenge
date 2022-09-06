@@ -177,39 +177,10 @@ div {
     font-size:12px;
     color: #006063 !important;
 }
-
-table {
-    border-collapse: collapse;
-    box-shadow: 0 5px 10px color gray;
-    background-color: white;
-    text-align:left;
-    overflow:hidden;
-    width: 50%;
-}
-
-th {
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-size: 0.7rem;
-    font-weight: 900;
-    font-size: 14px;
-    color: #71748d;
-}
-
-td {
-    padding: 1rem 2rem;
-    font-size: 14px;
-    color: #71748d;
-}
-
-
-
-thead{
-    box-shadow:0 5px 10px color gray;
-    background-color: white;
-    text-align:left;
-    overflow: hidden;
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
 }
 .card-header {
     font-family: Nunito,'Circular Std Book';
