@@ -22,18 +22,19 @@ export class AddRecipientComponent implements OnInit {
   addRecipient() {
     this.recipientService.addRecipient(this.recipient).subscribe(
       (response: Recipient) => {
+        alert("Recipient added successfully");
         console.log(response);
         this.goToRecipientList();
       },
       (error: any) => console.log(error)
     );
   }
-
+// Show all Recipients
   goToRecipientList() {
     this.router.navigate(['/recipient']);
   }
 
-
+  // Submit
   onSubmit() {
     console.log(this.recipient);
     this.addRecipient();

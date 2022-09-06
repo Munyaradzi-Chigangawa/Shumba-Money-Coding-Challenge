@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Sender } from 'src/app/models/sender';
 import { AuthService } from 'src/app/services/auth.service';
 import { SenderService } from 'src/app/services/sender.service';
@@ -14,10 +15,12 @@ export class LoginComponent implements OnInit {
   password = '';
 
 
-
+  senders: Sender[] = [];
   sender: Sender = new Sender();
-  route: any;
-  constructor(private authService: AuthService, private senderService: SenderService) { }
+  
+  constructor(private authService: AuthService, private senderService: SenderService,
+    private router: Router
+    ) { }
 
 
   ngOnInit(): void {
@@ -51,7 +54,7 @@ export class LoginComponent implements OnInit {
         console.log("Login successful");
         localStorage.setItem("token", response.token);
         localStorage.setItem("senderId", response.senderId);
-        this.route.navigate(['recipient']);
+        this.router.navigate(['dash/recipient']);
       }
 
     }, (err: any) => {
@@ -61,5 +64,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  senders: Sender[] = [];
+  register() {
+    this.router.navigate(['/register']);
+  }
 }
+

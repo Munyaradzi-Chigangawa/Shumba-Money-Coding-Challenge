@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center mt-3">
     <br>
     <img src="./assets/img/logo.png" alt="logo" width="300">
 </div>
@@ -27,13 +27,15 @@
 
                     </form>
                 </div>
-                <!-- <div class="card-footer bg-white p-0  ">
+                <div class="card-footer bg-white p-0  ">
                     <div class="row">
                         <div class="card-footer-item card-footer-item-bordered col-lg-6">
-                            <a href="" class="footer-link font-weight-bold text-dark mx-auto">Create An Account</a>
+                            <button type="submit" class = "btn btn-primary btn-md btn-block font-weight-bold"
+                                (click)="register()">Register 
+                            </button>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <div>
                 </div>
             </div>
@@ -42,9 +44,8 @@
     </div>
 </div>
 
-<br>
 
-<div class="mx-auto col-lg-8">
+<div class="mx-auto col-lg-8 mt-3">
     <div class="row">
         <div class="col-lg-5 mx-auto col-sm-12 col-md-10">
 
@@ -70,3 +71,16 @@
             </div>
         </div>
     </div>
+
+
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>Password</td>
+        </tr>
+        <tr *ngFor="let sender of senders">
+            <td> {{sender.senderEmail}}
+            </td>
+            <td> {{ sender.password}}</td>
+        </tr>
+    </table>

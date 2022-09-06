@@ -35,6 +35,7 @@ export class UpdateRecipientComponent implements OnInit {
   onSubmit() {
     this.recipientService.updateRecipient(this.recipientId, this.recipient).subscribe(
       data => {
+        alert("Recipient updated successfully");
         this.goToRecipientList();
       },
       error => console.log(error));

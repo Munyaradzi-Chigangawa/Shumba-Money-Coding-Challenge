@@ -9,15 +9,16 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { RecipientComponent } from './pages/dashboard/recipient/recipient.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentsModule } from './components/components.module';
 import { AddRecipientComponent } from './pages/dashboard/add-recipient/add-recipient.component';
 import { UpdateRecipientComponent } from './pages/dashboard/update-recipient/update-recipient.component';
 import { ViewRecipientComponent } from './pages/dashboard/view-recipient/view-recipient.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
+    RegisterComponent,
     DashboardLayoutComponent,
     RecipientComponent,
     AddRecipientComponent,
@@ -31,8 +32,6 @@ import { ViewRecipientComponent } from './pages/dashboard/view-recipient/view-re
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ComponentsModule
-    
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

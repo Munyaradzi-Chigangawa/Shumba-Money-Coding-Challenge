@@ -1,1 +1,64 @@
-<p>register works!</p>
+<div class="container">
+    <div class=" content">
+        <div class="row">
+            <div class=" col-md-8 mt-3">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h5 class=" title">Register</h5>
+                    </div>
+                    <div class=" card-body">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="senderName">First Name</label>
+                                <input type="text" class="form-control" id="senderName" placeholder="First Name"
+                                    [(ngModel)]="sender.senderName" name="senderName">
+                            </div>
+                            <div class="form-group">
+                                <label for="senderMaidenName">Maiden Name</label>
+                                <input type="text" class="form-control" id="senderMaidenName"
+                                    placeholder="Maiden Name" [(ngModel)]="sender.senderMaidenName"
+                                    name="senderMaidenName">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientSurname">Surname</label>
+                                <input type="text" class="form-control" id="recipientSurname" placeholder="Surname"
+                                    [(ngModel)]="sender.senderSurname" name="senderSurname">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientEmail">Email</label>
+                                <input type="text" class="form-control" id="recipientEmail" placeholder="Email"
+                                    [(ngModel)]="sender.senderEmail" name="senderEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientAddress">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    [(ngModel)]="sender.password" name="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientAddress">Address</label>
+                                <input type="text" class="form-control" id="recipientAddress" placeholder="Address"
+                                    [(ngModel)]="sender.senderAddress" name="senderAddress">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientCell">Cell</label>
+                                <input type="text" class="form-control" id="recipientCell" placeholder="Cell"
+                                    [(ngModel)]="sender.senderCell" name="senderCell">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientTown">Town</label>
+                                <input type="text" class="form-control" id="recipientTown" placeholder="Town"
+                                    [(ngModel)]="sender.senderTown" name="senderTown">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipientCountry">Country</label>
+                                <input type="text" class="form-control" id="recipientCountry" placeholder="Country"
+                                    [(ngModel)]="sender.senderCountry" name="senderCountry">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

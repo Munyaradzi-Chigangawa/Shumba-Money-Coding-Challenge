@@ -11,9 +11,15 @@ export class SenderService {
 
   constructor( private httpClient : HttpClient) { }
 
-  // Consuming Read All Endpoint
+  // Consuming Read All Senders Endpoint
   public getSendersList() : Observable<Sender[]> {
     return this.httpClient.get<Sender[]>(`${this.baseUrl}/getSenders`);
   }
+
+  // Create Sender
+  public addSender(sender: Sender) : Observable<Sender> {
+    return this.httpClient.post<Sender>(`${this.baseUrl}/addSender`, sender);
+  }
+  
 
 }

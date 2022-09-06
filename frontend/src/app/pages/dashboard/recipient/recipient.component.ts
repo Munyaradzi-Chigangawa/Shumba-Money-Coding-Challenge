@@ -21,11 +21,12 @@ export class RecipientComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecipients();
-
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(value => {
       console.log(value);
-   });
+    });
   }
+
+  // Get all Recipients
   public getRecipients() {
     this.recipientService.getRecipientsList()
       .subscribe(
@@ -36,6 +37,7 @@ export class RecipientComponent implements OnInit {
         });
   }
 
+  // Delete Recipient
   public deleteRecipient(recipientId: number) {
     this.recipientService.deleteRecipient(recipientId).subscribe(
       (response: void) => {
@@ -45,24 +47,4 @@ export class RecipientComponent implements OnInit {
       (error: any) => console.log(error)
     );
   }
-
-  open(content: any) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      this.closeModal = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeModal = `Dismissed ${this.getDismissalReason(reason)}`;
-    })
-  }
-
-  private getDismissalReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if
-      (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
-
 }
