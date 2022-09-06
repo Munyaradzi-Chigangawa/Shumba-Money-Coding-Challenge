@@ -13,11 +13,13 @@ import { AddRecipientComponent } from './pages/dashboard/add-recipient/add-recip
 import { UpdateRecipientComponent } from './pages/dashboard/update-recipient/update-recipient.component';
 import { ViewRecipientComponent } from './pages/dashboard/view-recipient/view-recipient.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
+    LoginComponent,
     RegisterComponent,
     DashboardLayoutComponent,
     RecipientComponent,
