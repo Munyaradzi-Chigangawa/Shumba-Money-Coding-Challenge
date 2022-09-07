@@ -31,7 +31,7 @@ ng serve
   
   ### Backend
   Open the project with IntelliJ
-  `Run the Application`
+  `Run the Application`.
   Take note that the port opened is running on `:8080`
   
   
