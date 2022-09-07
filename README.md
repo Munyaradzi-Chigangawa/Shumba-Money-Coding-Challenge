@@ -4,15 +4,9 @@ Web app that senders can use to list their recipients, update, create or delete 
 
 ## Tech Stack
 <p align="left">
-  <h3>Backend</h3>
-  <img src= "https://www.vectorlogo.zone/logos/springio/springio-ar21.svg" width= "100"/>
-    <h3>Frontend</h3>
-  <img src ="https://www.vectorlogo.zone/logos/angular/angular-ar21.svg" width = "100"/>
- 
-  
-  <h3>Database</h3>
-  <p align="left">
-  <img src = "https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" width = "50" />
+  <h3>Backend</h3> Spring Boot
+    <h3>Frontend</h3> Angular
+  <h3>Database</h3> MySQL
 
   
   ## How to Run 
