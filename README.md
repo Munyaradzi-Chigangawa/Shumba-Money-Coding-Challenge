@@ -33,7 +33,7 @@ ng serve
   Start your `MySQL Server` or `XAMPP`
   
   ### Backend
-  Open the project with IntelliJ.
+  Open the project with `IntelliJ`.
   <br> 
   Allow packages and dependencies to be installed
   `Run the Application`.
