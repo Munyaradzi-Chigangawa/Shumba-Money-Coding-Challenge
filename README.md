@@ -83,6 +83,10 @@ ng serve
  ${this.baseUrl}/deleteRecipient/${recipientId}
  ```
  
+## Preview
+`Create Account`
+![Screenshot (67)](https://user-images.githubusercontent.com/56768581/188908611-742af187-8eb4-47b8-b842-4047e37db06a.png)
+
  
  
   
