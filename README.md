@@ -1,6 +1,13 @@
 
 # Shumba Money Coding Challenge
-Web app that senders can use to list their recipients, update, create or delete recipients.
+
+## Features
+- Register Sender
+- Sender Login
+- Display Recipients
+- Create Recipients
+- Delete Recipients
+- Update Recipients
 
 ## Tech Stack
 <p align="left">
@@ -39,5 +46,7 @@ ng serve
   `Run the Application`.
   Take note that the port opened is running on `:8080`
   
+  
+
   
   
