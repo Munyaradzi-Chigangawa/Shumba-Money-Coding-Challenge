@@ -8,5 +8,5 @@ export class Sender {
     senderAddress!: string;
     senderTown!: string;
     senderCountry!: string;
-    password!: string;
+    senderPassword!: string;
 }

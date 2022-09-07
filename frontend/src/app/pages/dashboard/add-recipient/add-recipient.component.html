@@ -3,8 +3,8 @@
         <a class="navbar-brand" href="#">
             <img src="assets/img/logo.png" width="200" height="30" alt="">
         </a>
-        <a class="nav-item nav-link" routerLink="/recipient">Recipients</a>
-        <a class="nav-item nav-link" routerLink="/login">Logout</a>
+        
+        <a class="btn btn-outline-danger" routerLink="/login">Logout</a>
     </div>
 
 </nav>
@@ -16,7 +16,9 @@
             <div class=" col-md-8 mt-3">
                 <div class=" card">
                     <div class=" card-header">
+
                         <h5 class=" title">Add Recipient</h5>
+                        <a class="btn btn-outline-success" routerLink="/recipient">Back to Recipients</a>
                     </div>
                     <div class=" card-body">
                         <form (ngSubmit)="onSubmit()">
@@ -61,7 +63,7 @@
                                 <input type="text" class="form-control" id="recipientCountry" placeholder="Country"
                                     [(ngModel)]="recipient.recipientCountry" name="recipientCountry">
                             </div>
-                            <button type="submit" class="btn btn-primary">Add Recipient</button>
+                            <button type="submit" class="btn btn-outline-success">Add Recipient</button>
                         </form>
                     </div>
                 </div>

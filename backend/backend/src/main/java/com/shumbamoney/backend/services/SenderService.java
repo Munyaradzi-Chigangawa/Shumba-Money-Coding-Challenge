@@ -22,6 +22,7 @@ public class SenderService {
     private static final SecureRandom secureRandom = new SecureRandom();
     private static final Base64.Encoder base64encoder = Base64.getUrlEncoder();
 
+// Save Sender
     public Sender save (SenderDto sender) {
         sender.setToken(generateToken());
         Sender sender1 = Sender.builder()
@@ -31,33 +32,33 @@ public class SenderService {
                 .senderCountry(sender.getSenderCountry())
                 .senderEmail(sender.getSenderEmail())
                 .senderTown(sender.getSenderTown())
-                .password(sender.getPassword())
+                .senderPassword(sender.getSenderPassword())
                 .token(sender.getToken())
                 .build();
 
         return senderRepo.save(sender1);
     }
-
+    // Generate Token
     private String generateToken() {
         byte[] token = new byte[24];
         secureRandom.nextBytes(token);
         return base64encoder.encodeToString(token);
 
     }
-
-    public Sender login(SenderDto sender) {
-        Sender existingSender = senderRepo.findSenderBySenderEmail(sender.getSenderEmail()).orElse(null);
-        assert existingSender != null;
-        if (
-            existingSender.getSenderEmail().equals(sender.getSenderEmail()) &&
-                    existingSender.getPassword().equals(sender.getPassword())
-        ) {
-            existingSender.setPassword("");
-            return existingSender;
+//  Login
+    public Sender login (SenderDto sender) {
+        Sender sender1 = senderRepo.findSenderBySenderEmail(sender.getSenderEmail());
+        if (sender1 == null) {
+            throw new DataNotFoundException("Sender not found");
         }
-        return null;
+        if (sender1.getSenderPassword().equals(sender.getSenderPassword())) {
+            return sender1;
+        }
+        throw new DataNotFoundException("Invalid Password");
     }
 
+
+// Get Sender
     public Sender findById(Long senderId) {
         return senderRepo.findById(senderId).orElseThrow(()-> new DataNotFoundException("Sender with ID "+senderId+" was not found"));
     }

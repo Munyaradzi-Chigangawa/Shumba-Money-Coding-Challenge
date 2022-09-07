@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipient } from 'src/app/models/recipient';
 import { RecipientService } from 'src/app/services/recipient.service';
 
@@ -14,7 +14,7 @@ export class ViewRecipientComponent implements OnInit {
   
 
   constructor(private route: ActivatedRoute, 
-    private recipientService: RecipientService) { }
+    private recipientService: RecipientService, private router: Router) { }
 
   ngOnInit(): void {
     this.recipientId = this.route.snapshot.params['recipientId'];
@@ -26,5 +26,12 @@ export class ViewRecipientComponent implements OnInit {
     );
 
     
+  }
+  //  logout
+  onLogout() {
+    alert("You have been logged out");
+    localStorage.removeItem("token");
+    localStorage.removeItem("senderId");
+    this.router.navigate(['/login']);
   }
 }

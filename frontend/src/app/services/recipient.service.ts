@@ -15,7 +15,7 @@ export class RecipientService {
 
   // Consuming Read All Endpoint
   public getRecipientsList() : Observable<Recipient[]> {
-    return this.httpClient.get<Recipient[]>(`${this.baseUrl}/getRecipients?senderId=4`);
+    return this.httpClient.get<Recipient[]>(`${this.baseUrl}/getRecipients?senderId=${localStorage.getItem("senderId")}`);
   }
 
   // Consuming Read By Id Endpoint
@@ -25,12 +25,12 @@ export class RecipientService {
 
   // Consuming Create Endpoint
   public addRecipient (recipient: Recipient): Observable<Recipient> {
-    return this.httpClient.post<Recipient>(`${this.baseUrl}/addRecipient?senderId=4`, recipient)
+    return this.httpClient.post<Recipient>(`${this.baseUrl}/addRecipient?senderId=${localStorage.getItem("senderId")}`, recipient)
   }
 
   // Consuming Update Endpoint
   public updateRecipient (recipientId: number, recipient: Recipient): Observable<Recipient> {
-    return this.httpClient.put<Recipient>(`${this.baseUrl}/updateRecipient/${recipientId}?senderId=4`, recipient)
+    return this.httpClient.put<Recipient>(`${this.baseUrl}/updateRecipient/${recipientId}?senderId=${localStorage.getItem("senderId")}`, recipient)
   }
 
   // Consuming Delete Endpoint

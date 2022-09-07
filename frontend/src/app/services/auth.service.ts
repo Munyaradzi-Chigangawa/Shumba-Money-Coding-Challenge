@@ -13,8 +13,9 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  login(sender :Sender) : Observable<any> {
-    return this.httpClient.post<any>(`${this.baseUrl}/login`,sender);
+  // Login
+  login(sender: Sender): Observable<Sender> {
+    return this.httpClient.post<any>(`${this.baseUrl}/login`, sender);
   }
 }
 

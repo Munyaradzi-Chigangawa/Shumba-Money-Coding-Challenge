@@ -41,5 +41,12 @@ export class UpdateRecipientComponent implements OnInit {
       error => console.log(error));
 
   }
+  //  logout
+  onLogout() {
+    alert("You have been logged out");
+    localStorage.removeItem("token");
+    localStorage.removeItem("senderId");
+    this.router.navigate(['/login']);
+  }
 }
 

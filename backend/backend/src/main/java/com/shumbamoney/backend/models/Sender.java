@@ -23,9 +23,10 @@ public class Sender {
     private String senderName;
     private String senderEmail;
     private String senderAddress;
-    private String password;
+    private String senderPassword;
     private String senderCell;
     private String senderCountry;
     private String senderTown;
     private String token;
+
 }

@@ -38,30 +38,24 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // Login
-  login() {
-    this.sender.senderEmail = this.senderEmail;
-    this.sender.password = this.password;
-    console.log(this.sender);
-
+  // Sign In
+  signIn() {
     this.authService.login(this.sender).subscribe(
       (response: any) => {
-      if (response == null) {
-        alert("Username or password is wrong");
-        this.ngOnInit();
-      } else {
         alert("Login successful");
-        console.log("Login successful");
+        console.log(response);
+        this.router.navigate(['recipient']);
         localStorage.setItem("token", response.token);
-        localStorage.setItem("senderId", response.senderId);
-        this.router.navigate(['dash/recipient']);
+      localStorage.setItem("senderId", response.senderId);
+      },
+
+      (error: any) => {
+        console.log(error)
+        alert("Invalid Credentials");
+        this.ngOnInit();
       }
 
-    }, (err: any) => {
-      alert("Login failed");
-      this.ngOnInit();
-  })
-
+    );
   }
 
   register() {

@@ -40,4 +40,12 @@ export class AddRecipientComponent implements OnInit {
     this.addRecipient();
   }
 
+  //  logout
+  onLogout() {
+    alert("You have been logged out");
+    localStorage.removeItem("token");
+    localStorage.removeItem("senderId");
+    this.router.navigate(['/login']);
+  }
+
 }

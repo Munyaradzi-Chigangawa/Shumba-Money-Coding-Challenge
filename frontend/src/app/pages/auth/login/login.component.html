@@ -13,16 +13,16 @@
                         <div class="form-group">
                             <label class="font-weight-bold">Email</label>
                             <input class="form-control form-control-lg" name="senderEmail" type="text"
-                                placeholder="Email" value="" autocomplete="off" autofocus="" [(ngModel)]="sender.senderEmail">
+                                placeholder="Email" autocomplete="off" autofocus="" [(ngModel)]="sender.senderEmail">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-bold">Password</label>
-                            <input class="form-control form-control-lg" name="password" type="password"
-                                placeholder="Password" [(ngModel)]="sender.password">
+                            <input class="form-control form-control-lg" name="senderPassword" type="password"
+                                placeholder="Password" [(ngModel)]="sender.senderPassword">
                         </div>
 
                         <button type="submit" id="login-btn" class="btn btn-primary btn-md btn-block font-weight-bold"
-                            (click)="login()">Sign In
+                            (click)="signIn()">Sign In
                         </button>
 
                     </form>
@@ -61,7 +61,7 @@
                                 <tr *ngFor="let sender of senders">
                                     <td> {{sender.senderEmail}}
                                     </td>
-                                    <td> {{ sender.password}}</td>
+                                    <td> {{ sender.senderPassword}}</td>
                                 </tr>
                             </tbody>
                         </table>

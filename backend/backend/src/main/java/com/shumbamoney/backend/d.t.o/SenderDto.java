@@ -17,7 +17,7 @@ public class SenderDto implements Serializable {
     @NotEmpty(message = "Address Required.")
     private String senderAddress;
     @NotEmpty(message = "Password Required.")
-    private String password;
+    private String senderPassword;
     @NotEmpty(message = "Phone Number Required.")
     private String senderCell;
     @NotEmpty(message = "Country Required.")
