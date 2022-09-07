@@ -10,10 +10,13 @@ Web app that senders can use to list their recipients, update, create or delete 
 
   
   ## How to Run 
+  Project includes font `Font Awesome Icons` so when running the app internet access is required for icons to load.
+  
   Clone the Repository to your local machine
   ```console  
 git clone https://github.com/Munyaradzi-Chigangawa/Shumba-Money-Coding-Challenge
 ```
+
   ### Frontend
   
   To install dependencies.
@@ -30,7 +33,9 @@ ng serve
   Start your `MySQL Server` or `XAMPP`
   
   ### Backend
-  Open the project with IntelliJ
+  Open the project with IntelliJ.
+  <br> 
+  Allow packages and dependencies to be installed
   `Run the Application`.
   Take note that the port opened is running on `:8080`
   
