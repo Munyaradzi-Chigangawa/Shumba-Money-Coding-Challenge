@@ -40,11 +40,4 @@ public class SenderController {
         log.info("Senders Retrieved.");
         return new ResponseEntity<>(senderService.getSenders(), HttpStatus.OK);
     }
-    
-    // @PostMapping( value = "/login")
-    // public Sender login (@RequestBody Sender sender) {
-    //     log.info("Sender Logged in.");
-    //     return senderService.login(sender);
-    // }
-
 }
