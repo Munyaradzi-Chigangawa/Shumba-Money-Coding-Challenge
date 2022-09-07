@@ -46,7 +46,44 @@ ng serve
   `Run the Application`.
   Take note that the port opened is running on `:8080`
   
+  ### API Endpoints
+  ```
+  private baseUrl = 'http://localhost:8080/api/v1';
   
-
+  ```
   
+  Read All Recipients
+  ```
+  ${this.baseUrl}/getRecipients?senderId=${localStorage.getItem("senderId")}
+  ```
   
+  Add Recipient
+  ```
+  ${this.baseUrl}/addRecipient?senderId=${localStorage.getItem("senderId")}
+  ```
+  
+  ``` JSON
+  {
+    "recipientName": "Munya",
+    "recipientEmail": "munyaradzichigangawa@gmail.com",
+    "recipientAddress": "9801 Ruvimbo 2, Chinhoyi",
+    "recipientCell": "+263772288925",
+    "recipientCountry": "Zimbabwe",
+    "recipientTown": "Chinhoyi"
+}
+```
+  
+  Update Recipient
+ ```
+ ${this.baseUrl}/updateRecipient/${recipientId}?senderId=${localStorage.getItem("senderId")}
+ ```
+ 
+ Delete Recipient
+ ```
+ ${this.baseUrl}/deleteRecipient/${recipientId}
+ ```
+ 
+ 
+ 
+  
+ 
