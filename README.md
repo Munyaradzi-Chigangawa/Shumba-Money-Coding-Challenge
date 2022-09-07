@@ -10,7 +10,6 @@ Web app that senders can use to list their recipients, update, create or delete 
 
   
   ## How to Run 
-  Project includes font `Font Awesome Icons` so when running the app internet access is required for icons to load.
   
   Clone the Repository to your local machine
   ```console  
@@ -28,6 +27,7 @@ Run the application. Navigate to `http://localhost:4200/`.
   ```console  
 ng serve
 ```
+  Project includes `Font Awesome Icons` so when running the app internet access is required for icons to load.
   
   ### Database 
   Start your `MySQL Server` or `XAMPP`
