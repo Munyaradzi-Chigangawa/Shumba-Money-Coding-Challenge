@@ -63,7 +63,7 @@ public class RecipientService {
         Recipient recipient = recipientRepo.findById(id)
                 .orElseThrow(() -> new DataNotFoundException("No Recipients Found"));
         recipient.setRecipientName(recipientDto.getRecipientName());
-        recipient.setRecipientMaidenName(recipient.getRecipientMaidenName());
+        recipient.setRecipientMaidenName(recipientDto.getRecipientMaidenName());
         recipient.setRecipientSurname(recipientDto.getRecipientSurname());
         recipient.setRecipientEmail(recipientDto.getRecipientEmail());
         recipient.setRecipientAddress(recipientDto.getRecipientAddress());
@@ -79,11 +79,4 @@ public class RecipientService {
         return recipientRepo.getRecipientBySender(sender);
 
     }
-
-
-//    public void updateRecipient (RecipientDto recipient) {
-//        recipient recipient1 = recipientRepo.findById;
-//
-//        return RecipientRepo.save(recipient);
-//    }
 }
