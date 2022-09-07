@@ -32,9 +32,6 @@ export class RecipientService {
   public updateRecipient (recipientId: number, recipient: Recipient): Observable<Recipient> {
     return this.httpClient.put<Recipient>(`${this.baseUrl}/updateRecipient/${recipientId}?senderId=4`, recipient)
   }
-  // public updateRecipient (recipient: Recipient): Observable<Recipient> {
-  //   return this.httpClient.put<Recipient>(`${this.baseUrl}/updateRecipient`,recipient)
-  // }
 
   // Consuming Delete Endpoint
   public deleteRecipient (recipientId: number): Observable<void> {

@@ -9,7 +9,12 @@ import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
 
   {
-    path: "dash",
+    path: '',
+    redirectTo: '/recipient',
+    pathMatch: 'full',
+  },
+  {
+    path: "",
     component: DashboardLayoutComponent,
     canActivate: [AuthGuardService],
     children: [
@@ -31,12 +36,12 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "dash/recipient",
+    redirectTo: "/recipient",
     pathMatch: "full",
   },
   {
     path: "**",
-    redirectTo: "dash/recipient",
+    redirectTo: "/recipient",
   }
 
 ];

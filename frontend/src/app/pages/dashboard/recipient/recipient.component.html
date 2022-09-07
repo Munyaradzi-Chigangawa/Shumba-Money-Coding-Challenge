@@ -5,7 +5,7 @@
 
         </a>
 
-        <a class="nav-item nav-link" routerLink="/dash/add-recipient">Add Recipient</a>
+        <a class="nav-item nav-link" routerLink="/add-recipient">Add Recipient</a>
         <a class="nav-item nav-link" routerLink="/login">Logout</a>
     </div>
 
@@ -42,12 +42,12 @@
                                     </button>
                                 <td>
                                     <button class="btn btn-outline-info" 
-                                    [routerLink]="'/dash/view-recipient/' + recipient.recipientId">
+                                    [routerLink]="'/view-recipient/' + recipient.recipientId">
                                         
                                         <i class="fa-solid fa-eye"></i>
                                     </button>
                                     <a class="btn btn-outline-success"
-                                        [routerLink]="'/dash/update-recipient/' + recipient.recipientId">
+                                        [routerLink]="'/update-recipient/' + recipient.recipientId">
                                         <i class="fa-solid fa-square-pen"></i>
                                     </a>
                                     <button class="btn btn-outline-danger" (click)="deleteRecipient(recipient.recipientId)">
